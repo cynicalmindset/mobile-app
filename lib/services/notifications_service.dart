@@ -33,7 +33,7 @@ class NotificationsServiceImpl implements NotificationsService {
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
-      throw Failure(Constants.GROUP_NOT_FOUND);
+      throw Failure(Constants.NOTIFICATION_NOT_FOUND);
     } on Exception {
       throw Failure(Constants.GENERIC_FAILURE);
     }
@@ -50,7 +50,7 @@ class NotificationsServiceImpl implements NotificationsService {
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
-      throw Failure(Constants.GROUP_NOT_FOUND);
+      throw Failure(Constants.NOTIFICATION_NOT_FOUND);
     } on Exception {
       throw Failure(Constants.GENERIC_FAILURE);
     }
@@ -67,7 +67,7 @@ class NotificationsServiceImpl implements NotificationsService {
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
-      throw Failure(Constants.GROUP_NOT_FOUND);
+      throw Failure(Constants.NOTIFICATION_NOT_FOUND);
     } on Exception {
       throw Failure(Constants.GENERIC_FAILURE);
     }
