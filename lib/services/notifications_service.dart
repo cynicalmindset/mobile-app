@@ -30,6 +30,8 @@ class NotificationsServiceImpl implements NotificationsService {
       }
 
       return notif;
+    } on UnauthorizedException {
+      throw Failure(Constants.UNAUTHENTICATED);
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
@@ -47,6 +49,8 @@ class NotificationsServiceImpl implements NotificationsService {
     try {
       ApiUtils.addTokenToHeaders(headers);
       await ApiUtils.patch(uri, headers: headers);
+    } on UnauthorizedException {
+      throw Failure(Constants.UNAUTHENTICATED);
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
@@ -64,6 +68,8 @@ class NotificationsServiceImpl implements NotificationsService {
     try {
       ApiUtils.addTokenToHeaders(headers);
       await ApiUtils.get(uri, headers: headers);
+    } on UnauthorizedException {
+      throw Failure(Constants.UNAUTHENTICATED);
     } on ForbiddenException {
       throw Failure(Constants.UNAUTHORIZED);
     } on NotFoundException {
